@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>UserList</title>
+   <script>
+       function showUsersInTable()
+       {
+            var users=[
+                        {
+                            "username":"Vaishali Chauhan",
+                            "password":"abc123",
+                            "email":"12345vaishalichauhan12@gmail.com",
+                            "phoneno":"9876543211"
+                        },
+                        {
+                            "username":"Vishal Chauhan",
+                            "password":"1234",
+                            "email":"xyz@gmail.com",
+                            "phoneno":"9988877665"
+                        },
+                        {
+                            "username":"Jasmine",
+                            "password":"jass17",
+                            "email":"jass@gmail.com",
+                            "phoneno":"8077567723"
+                        },
+                        {
+                            "username":"Rubina",
+                            "password":"rubi",
+                            "email":"rubisingh@gmail.com",
+                            "phoneno":"7098654322"
+                        }   
+                ]
+            
+            var tablediv=document.getElementById("tablediv");
+            var table=document.createElement("table");
+            table.className="table table-dark";
+            table.style.marginTop="10%";
+            var caption=document.createElement("caption");
+            caption.style.textAlign="center";
+            caption.appendChild(document.createTextNode("List of users"));
+            table.appendChild(caption);
+
+
+
+            var thead=document.createElement("thead");
+            table.appendChild(thead);
+            var tr=document.createElement("tr");
+            thead.appendChild(tr);
+            var th1=document.createElement("th");
+            tr.appendChild(th1);
+            th1.appendChild(document.createTextNode("UserName"));
+            var th2=document.createElement("th");
+            tr.appendChild(th2);
+            th2.appendChild(document.createTextNode("Password"));
+            var th3=document.createElement("th");
+            tr.appendChild(th3);
+            th3.appendChild(document.createTextNode("Email"));
+            var th4=document.createElement("th");
+            tr.appendChild(th4);
+            th4.appendChild(document.createTextNode("Mobile No."));
+        
+
+
+            for(var i=0;i<users.length;i++)
+            {
+                var tr=document.createElement("tr");
+                table.appendChild(tr);
+                var td1=document.createElement("td");
+                var username=document.createTextNode(users[i].username);
+                td1.appendChild(username);
+                tr.appendChild(td1);
+                var td2=document.createElement("td");
+                var password=document.createTextNode(users[i].password);
+                td2.appendChild(password);
+                tr.appendChild(td2);
+                var td3=document.createElement("td");
+                var email=document.createTextNode(users[i].email);
+                td3.appendChild(email);
+                tr.appendChild(td3);
+                var td4=document.createElement("td");
+                var phoneno=document.createTextNode(users[i].phoneno);
+                td4.appendChild(phoneno);
+                tr.appendChild(td4);
+            }
+            tablediv.appendChild(table);
+
+       }
+    
+   </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </head>
+   <body>
+    <div style="text-align:center;margin-top:5%"><button type="submit" class="btn btn-success btn-lg"  onclick="showUsersInTable();">Create Dynamic Table</button></div>
+   <div id="tablediv"></div>
+
+   </body>
+</html>
